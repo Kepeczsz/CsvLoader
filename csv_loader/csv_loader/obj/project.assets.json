@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\csv_loader\\csv_loader\\csv_loader.csproj",
-      "projectName": "csv_loader",
-      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\csv_loader\\csv_loader\\csv_loader.csproj",
+      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\Csv_Loader\\csv_loader\\Modules.User.Domain.csproj",
+      "projectName": "Modules.User.Domain",
+      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Csv_Loader\\csv_loader\\Modules.User.Domain.csproj",
       "packagesPath": "C:\\Users\\sm49416\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sm49416\\Desktop\\projekt\\csv_loader\\csv_loader\\obj\\",
+      "outputPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Csv_Loader\\csv_loader\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sm49416\\AppData\\Roaming\\NuGet\\NuGet.Config",

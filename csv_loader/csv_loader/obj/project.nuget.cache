@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jdoz1/ruvxMec1iyDblTpPXrjm2DCRUUc95mfqiwf957hh6r9FNVaDoWxFIigu3dtMECZ7c7TKg44+vkTnaSLA==",
+  "dgSpecHash": "nhhfVg2kmDemx0ayvhBtPhnj2Nk2y2t5wb4Lbq1avrKIKw7EhBYD7P5VdyfosyCPm0IqKU6fQRkfNBv7yU1Xyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sm49416\\Desktop\\projekt\\csv_loader\\csv_loader\\csv_loader.csproj",
+  "projectFilePath": "C:\\Users\\sm49416\\Desktop\\projekt\\Csv_Loader\\csv_loader\\Modules.User.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
