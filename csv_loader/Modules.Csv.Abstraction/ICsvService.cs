@@ -13,5 +13,7 @@ public interface ICsvService<T>
     /// <param name="path">The path to file containing the CSV data.</param>
     /// <param name="csvConfig">The CsvConfiguration for parsing the CSV file.</param>
     /// <returns>A list of data records of type T.</returns>
+    //public Task<List<T>> GetRecordsFromCsv<THeader>(string path, CsvConfiguration csvConfig);
+
     public Task<List<T>> GetRecordsFromCsv<THeader>(string path, CsvConfiguration csvConfig);
 }

@@ -70,7 +70,7 @@ public class ClientDataService : IClientDataService
         var invalidClients = new List<GetClientInfo>();
 
         List<string> clientNamesList = clientDbContext.Clients.Select(c => c.Name).ToList();
-        GetClientsNameInfo clientsNames = new GetClientsNameInfo { ClientNames = clientNamesList   };
+        GetClientsNameInfo clientsNames = new GetClientsNameInfo { ClientNames = clientNamesList };
 
         var clientsFromFile = await this.csvService.GetRecordsFromCsv<GetClientInfo>(path, csvConfig);
 
@@ -99,12 +99,14 @@ public class ClientDataService : IClientDataService
         return new GetTransferList<GetClientInfo> { CorrectList = validClients, ErrorsList = invalidClients };
     }
 
-    public Task<ClientList> MapFrom(IEnumerable<GetClientInfo> clientToImport)
+    public async Task<ClientList> MapFrom(IEnumerable<GetClientInfo> clientToImport)
     {
         var newClients = new List<Client>();
-        foreach (var client in clientToImport)
+        IEnumerable<GetClientInfo> updatedClientToImport = clientToImport.Skip(1);
+
+        foreach (var client in updatedClientToImport)
         {
-            var clientId = client.Id;
+            var clientId = int.Parse(client.Id);
             var clientName = client.Name;
             var clientSurname = client.Surname;
             var clientEmail = client.Email;
@@ -115,6 +117,6 @@ public class ClientDataService : IClientDataService
             newClients.Add(newClient);
         }
 
-        return Task.FromResult(new ClientList(newClients));
+        return await Task.FromResult(new ClientList(newClients));
     }
 }

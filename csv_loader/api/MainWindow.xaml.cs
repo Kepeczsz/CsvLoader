@@ -26,14 +26,12 @@ namespace api
     {
         ClientController clientController;
 
+
         public MainWindow(ClientController clientController)
         {
             this.clientController = clientController;
-        }
-
-        public MainWindow()
-        {
             InitializeComponent();
+            clientController.ImportClients("C:\\Users\\sm49416\\Desktop\\projekt\\csv_loader\\api\\employes.csv");
         }
     }
 }

@@ -16,11 +16,10 @@ namespace Modules.User.Application.shared.services;
 
 public class ClientImportService : IClientImportService
 {
-    private readonly ICsvService<GetClientInfo> csvService;
-
-    public ClientImportService(ICsvService<GetClientInfo> csvService)
+    private readonly IClientDataService clientDataService;
+    public ClientImportService(IClientDataService clientDataService)
     {
-        this.csvService = csvService;
+        this.clientDataService = clientDataService;
     }
 
     public async Task<GetImportResult<ClientList>> Import(string path)
@@ -33,23 +32,22 @@ public class ClientImportService : IClientImportService
             Delimiter = ",",
         };
 
+        var clientInfo = await clientDataService.CreateValidClientList(path, csvConfig, errors);
+        if (!clientInfo.CorrectList.Any())
+        {
+            return new GetImportResult<ClientList>(
+                new ClientList(new List<Client>()),
+                new ImportResult { ErrorsList = errors });
+        }
 
-        //if (clientInfo.CorrectList.Count == 0)
-        //{
-        //    return new GetImportResult<ClientList>(
-        //        new ClientList(new List<Client>()),
-        //        new ImportResult { ErrorsList = errors });
-        //}
+        var clientList = await clientDataService.MapFrom(clientInfo.CorrectList);
 
+        if (clientInfo.ErrorsList.Count == 0)
+        {
+            return new GetImportResult<ClientList>(clientList, new ImportResult { ErrorsList = errors });
+        }
 
-        //var budgetsAggregateList = await this.budgetDataService.MapFrom(budgetInfos.CorrectList);
-
-        //if (clientInfo.ErrorsList.Count == 0)
-        //{
-        //    return new GetImportResult<ClientList>(budgetsAggregateList, new ImportResult { ErrorsList = errors });
-        //}
-
-        return new GetImportResult<ClientList>(null, new ImportResult { ErrorsList = errors });
+        return new GetImportResult<ClientList>(clientList, new ImportResult { ErrorsList = errors });
     }
 }
 

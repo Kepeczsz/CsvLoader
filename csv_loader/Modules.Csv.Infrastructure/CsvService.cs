@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using Modules.Csv.Abstractions;
+using Modules.Csv.Infrastructure;
 using System.Text;
 
 namespace Modules.Csv.Infrastructure;
@@ -9,9 +10,12 @@ public class CsvService<T> : ICsvService<T>
 {
     public async Task<List<T>> GetRecordsFromCsv<THeader>(string path, CsvConfiguration csvConfig)
     {
-        
-        using var reader = new StreamReader(path);
-        string fileContent = await reader.ReadToEndAsync();
+        string fileContent;
+        using (StreamReader reader = new StreamReader(path))
+        {
+            fileContent = reader.ReadToEnd();
+        }
+
         string expectedHeader = GenerateExpectedHeader<THeader>();
 
         if (!fileContent.StartsWith(expectedHeader))
@@ -26,10 +30,9 @@ public class CsvService<T> : ICsvService<T>
 
         using var streamReader = new StreamReader(stream);
         using var csv = new CsvReader(streamReader, csvConfig);
-        await csv.ReadAsync();
 
-        var records = csv.GetRecords<T>().ToList();
-        return records;
+        await csv.ReadAsync();
+        return csv.GetRecords<T>().ToList();
     }
 
     /// <summary>
