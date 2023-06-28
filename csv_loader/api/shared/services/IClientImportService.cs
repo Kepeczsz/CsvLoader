@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Modules.Csv.Infrastructure.Import;
 using Modules.User.Application.ImportingClients;
-using Modules.User.Domain;
 
 namespace Modules.User.Application.shared.services;
 

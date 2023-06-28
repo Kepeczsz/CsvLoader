@@ -7,4 +7,13 @@ public class Client
     public string Surname { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
+
+    public Client(Guid id, string name, string surname, string email, string phoneNumber)
+    {
+        Id = id;
+        Name = name;
+        Surname = surname;
+        Email = email;
+        PhoneNumber = phoneNumber;
+    }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Modules.User.Api;
+using Modules.User.Application.shared.services;
+using Modules.User.Infrastructure.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +24,13 @@ namespace api
     /// </summary>
     public partial class MainWindow : Window
     {
+        ClientController clientController;
+
+        public MainWindow(ClientController clientController)
+        {
+            this.clientController = clientController;
+        }
+
         public MainWindow()
         {
             InitializeComponent();

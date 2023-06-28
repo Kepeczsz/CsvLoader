@@ -2,6 +2,7 @@
 using Modules.User.Domain;
 using Modules.User.Infrastructure.Data;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Modules.User.Api;
@@ -32,7 +33,7 @@ public class ClientController
 
         clientDbContext.SaveChanges();
 
-        return errorList;
+        return errorList.Any() ? errorList : new List<string>{ "There wasn't any errors" };
     }
 }
 
