@@ -9,9 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{2ABF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "user", "user", "{79EFAC59-D66A-4F8D-915E-09609C4846BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.User.Api", "api\Modules.User.Api.csproj", "{FC3FBB1E-7929-44BF-83EB-B02DFD9C37F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.User.Application", "api\Modules.User.Application.csproj", "{FC3FBB1E-7929-44BF-83EB-B02DFD9C37F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.User.Domain", "Modules.User.Domain\Modules.User.Domain.csproj", "{232266E1-A10E-4205-B45B-5DCF18B8DE63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.User.Domain", "Modules.User.Domain\Modules.User.Domain.csproj", "{232266E1-A10E-4205-B45B-5DCF18B8DE63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csv", "csv", "{307F5858-2984-43B8-BAC3-8EDAB22778CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Csv.Infrastructure", "Modules.Csv.Infrastructure\Modules.Csv.Infrastructure.csproj", "{BE096BA2-AD46-4747-B8B8-454B8D19AEB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Csv.Abstractions", "Modules.Csv.Abstraction\Modules.Csv.Abstractions.csproj", "{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,14 @@ Global
 		{232266E1-A10E-4205-B45B-5DCF18B8DE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232266E1-A10E-4205-B45B-5DCF18B8DE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232266E1-A10E-4205-B45B-5DCF18B8DE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE096BA2-AD46-4747-B8B8-454B8D19AEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE096BA2-AD46-4747-B8B8-454B8D19AEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE096BA2-AD46-4747-B8B8-454B8D19AEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE096BA2-AD46-4747-B8B8-454B8D19AEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +54,9 @@ Global
 		{79EFAC59-D66A-4F8D-915E-09609C4846BC} = {2ABF7466-C8FF-44BA-BE74-99E987601AAD}
 		{FC3FBB1E-7929-44BF-83EB-B02DFD9C37F8} = {79EFAC59-D66A-4F8D-915E-09609C4846BC}
 		{232266E1-A10E-4205-B45B-5DCF18B8DE63} = {79EFAC59-D66A-4F8D-915E-09609C4846BC}
+		{307F5858-2984-43B8-BAC3-8EDAB22778CA} = {2ABF7466-C8FF-44BA-BE74-99E987601AAD}
+		{BE096BA2-AD46-4747-B8B8-454B8D19AEB5} = {307F5858-2984-43B8-BAC3-8EDAB22778CA}
+		{56EFB020-5A18-41B9-AF6A-743CEA5EE7B1} = {307F5858-2984-43B8-BAC3-8EDAB22778CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C75A435-0401-4C74-BE71-314A70EE4721}

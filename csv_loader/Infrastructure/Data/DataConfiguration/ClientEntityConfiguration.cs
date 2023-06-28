@@ -4,7 +4,7 @@ using Modules.User.Domain;
 
 namespace Data.DataConfiguration;
 
-internal class UserEntityConfiguration : IEntityTypeConfiguration<Client>
+internal class ClientEntityConfiguration : IEntityTypeConfiguration<Client>
 {
     public void Configure(EntityTypeBuilder<Client> builder)
     {

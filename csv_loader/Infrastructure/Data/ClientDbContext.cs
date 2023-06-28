@@ -3,9 +3,9 @@ using Modules.User.Domain;
 
 namespace Modules.User.Infrastructure.Data;
 
-public class UserDbContext : DbContext
+public class ClientDbContext : DbContext
 {
-    public UserDbContext(DbContextOptions<UserDbContext> options)
+    public ClientDbContext(DbContextOptions<ClientDbContext> options)
     : base(options)
     {
     }
@@ -14,7 +14,7 @@ public class UserDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserDbContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClientDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
     }
 }
