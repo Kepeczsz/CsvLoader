@@ -1,14 +1,9 @@
-﻿using api;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modules.Csv.Abstractions;
-using Modules.User.Api;
-using Modules.User.Application;
+using Modules.User.Application.Controllers;
 using Modules.User.Application.Dependencies;
-using Modules.User.Application.shared.services;
 using Modules.User.Application.views;
-using Modules.User.Domain;
 using Modules.User.Infrastructure.Data;
 using System.IO;
 using System.Windows;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Modules.User.Api;
-using Modules.User.Application.shared.services;
+using Modules.User.Application;
+using Modules.User.Application.Shared.Services;
 using Modules.User.Application.views;
 using System;
 using System.ComponentModel;

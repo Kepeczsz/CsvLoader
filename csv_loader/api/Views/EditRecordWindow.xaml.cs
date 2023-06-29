@@ -1,13 +1,11 @@
 ﻿
-using FluentValidation;
 using Modules.User.Application.ImportingClients;
 using Modules.User.Infrastructure.Data;
-using System;
 using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace Modules.User.Application;
+namespace Modules.User.Application.views;
 
 /// <summary>
 /// Interaction logic for EditRecordWindow.xaml

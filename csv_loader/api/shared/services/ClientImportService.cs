@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Modules.User.Domain;
 
 
-namespace Modules.User.Application.shared.services;
+namespace Modules.User.Application.Shared.Services;
 
 public class ClientImportService : IClientImportService
 {

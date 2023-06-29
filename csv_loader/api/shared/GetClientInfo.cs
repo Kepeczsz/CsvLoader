@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.User.Application.shared;
+namespace Modules.User.Application.Shared;
 public record GetClientInfo
 {
     [Name("id")]

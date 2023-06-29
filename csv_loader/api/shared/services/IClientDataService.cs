@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.User.Application.shared.services;
+namespace Modules.User.Application.Shared.Services;
 
 public interface IClientDataService
 {

@@ -1,13 +1,10 @@
-﻿using Modules.Csv.Abstractions;
-using Modules.User.Application.ImportingClients;
-using Modules.User.Application.shared;
-using Modules.User.Application.shared.services;
+﻿using Modules.User.Application.ImportingClients;
+using Modules.User.Application.Shared.Services;
 using Modules.User.Infrastructure.Data;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Threading.Tasks;
 
-namespace Modules.User.Api;
+namespace Modules.User.Application.Controllers;
 
 public class ClientController
 {

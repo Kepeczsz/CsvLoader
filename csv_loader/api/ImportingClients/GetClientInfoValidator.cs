@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Modules.User.Application.shared;
+using Modules.User.Application.Shared;
 
 namespace Modules.User.Application.ImportingClients;
 

@@ -2,7 +2,7 @@
 using Modules.Csv.Infrastructure.Import;
 using Modules.User.Application.ImportingClients;
 
-namespace Modules.User.Application.shared.services;
+namespace Modules.User.Application.Shared.Services;
 
 public interface IClientImportService
 {

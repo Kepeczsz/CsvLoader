@@ -1,4 +1,5 @@
 ﻿using CsvHelper.Configuration;
+using FluentValidation;
 using Modules.Csv.Abstractions;
 using Modules.Csv.Abstractions.Extensions;
 using Modules.Csv.Infrastructure;
@@ -9,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Modules.User.Application.shared.services;
+namespace Modules.User.Application.Shared.Services;
 
 public class ClientDataService : IClientDataService
 {

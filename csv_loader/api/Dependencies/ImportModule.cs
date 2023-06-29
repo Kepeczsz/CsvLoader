@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Modules.Csv.Abstractions;
 using Modules.Csv.Infrastructure;
-using Modules.User.Application.shared;
-using Modules.User.Application.shared.services;
-
+using Modules.User.Application.Shared;
+using Modules.User.Application.Shared.Services;
 
 namespace Modules.User.Application.Dependencies;
 public static class ImportModule
