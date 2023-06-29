@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using Modules.User.Application.shared;
 
-
 namespace Modules.User.Application.ImportingClients;
+
 public class GetClientInfoValidator : AbstractValidator<GetClientInfo>
 {
     public GetClientInfoValidator()

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Modules.User.Application.shared.services;
+
 public class ClientDataService : IClientDataService
 {
     private readonly ClientDbContext clientDbContext;
@@ -30,7 +31,6 @@ public class ClientDataService : IClientDataService
         errors.AddErrors(validationResult);
 
         return errors;
-
     }
 
     public GetClientInfo? Create(GetClientInfo client)

@@ -17,8 +17,6 @@ public partial class FileSelectionWindow : Window
         InitializeComponent();
     }
 
-
-
     private void SelectFile_Click(object sender, RoutedEventArgs e)
     {
         OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -29,11 +27,10 @@ public partial class FileSelectionWindow : Window
                 lbFiles.Items.Add(filename);
         }
     }
+
     private async void ImportClients_Click(object sender, RoutedEventArgs e, string selectedFilePath)
     {
-
         var importResult = await clientController.ImportClients(selectedFilePath);
-
 
         if (importResult != null)
         {

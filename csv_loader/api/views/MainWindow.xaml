@@ -6,12 +6,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="99*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="LoadBtn" Height="50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="Load_FileDialog" Grid.Column="2" Margin="350,384,0,0">Load</Button>
+        <Button x:Name="LoadBtn" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Click="Load_FileSelectionWindow_Click">Load</Button>
     </Grid>
 </Window>
