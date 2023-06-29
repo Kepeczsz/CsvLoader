@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.User.Infrastructure
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{2ABF7466-C8FF-44BA-BE74-99E987601AAD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "user", "user", "{79EFAC59-D66A-4F8D-915E-09609C4846BC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{79EFAC59-D66A-4F8D-915E-09609C4846BC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.User.Application", "api\Modules.User.Application.csproj", "{FC3FBB1E-7929-44BF-83EB-B02DFD9C37F8}"
 EndProject

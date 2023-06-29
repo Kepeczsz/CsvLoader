@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modules.Csv.Abstractions;
 using Modules.User.Api;
+using Modules.User.Application;
 using Modules.User.Application.Dependencies;
 using Modules.User.Application.shared.services;
 using Modules.User.Application.views;
@@ -35,7 +36,6 @@ public partial class App : Application
             .AddJsonFile("appsettings.json")
             .Build();
 
-        // Configure DbContext using the connection string from appsettings.json
         services.AddDbContext<ClientDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("AppDb")));
 
@@ -43,6 +43,7 @@ public partial class App : Application
         services.AddScoped<ClientController>();
         services.AddSingleton<MainWindow>();
         services.AddTransient<FileSelectionWindow>();
+        services.AddTransient<EditRecordWindow>();
     }
     protected void OnStartup(object sender, StartupEventArgs e)
     {

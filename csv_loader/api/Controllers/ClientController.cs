@@ -1,4 +1,5 @@
 ﻿using Modules.Csv.Abstractions;
+using Modules.User.Application.ImportingClients;
 using Modules.User.Application.shared;
 using Modules.User.Application.shared.services;
 using Modules.User.Infrastructure.Data;
@@ -11,17 +12,15 @@ namespace Modules.User.Api;
 public class ClientController
 {
     private readonly IClientImportService clientImportService;
-    private readonly ICsvService<GetClientInfo> csvService;
     private readonly ClientDbContext clientDbContext;
 
-    public ClientController(IClientImportService clientImportService, ClientDbContext clientDbContext, ICsvService<GetClientInfo> csvService)
+    public ClientController(IClientImportService clientImportService, ClientDbContext clientDbContext)
     {
         this.clientImportService = clientImportService;
         this.clientDbContext = clientDbContext;
-        this.csvService = csvService;
     }
 
-    public async Task<List<string>> ImportClients(string pathToFile)
+    public async Task<ClientList> ImportClients(string pathToFile)
     {
         var getImportResult = await this.clientImportService.Import(pathToFile);
 
@@ -36,7 +35,7 @@ public class ClientController
         }
         clientDbContext.SaveChanges();
 
-        return errorList.Any() ? errorList : new List<string>{ "There wasn't any errors" };
+        return listOfClients;
     }
 
 }

@@ -5,14 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="FileSelectionWindow" Height="450" Width="800">
-    <StackPanel>
-        <Button Content="Select File" Click="SelectFile_Click" />
-        <ListBox Name="lbFiles">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Edit Record" Click="EditRecord_Click" />
+            <Button Content="Select File" Click="SelectFile_Click" Grid.Column="1" />
+        </Grid>
+
+        <ListBox Name="lbFiles" Grid.Row="1">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-    </StackPanel>
+
+        <ListView Name="importedClientsListView" Grid.Row="2" Grid.IsSharedSizeScope="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" />
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
+                    <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding PhoneNumber}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
 </Window>
