@@ -29,15 +29,15 @@ public interface IClientDataService
     /// <summary>
     /// Validates the properties of a client object.
     /// </summary>
-    /// <param name="budget">The budget object to validate.</param>
+    /// <param name="client">The client object to validate.</param>
     /// <returns>A list of error messages. If the list is empty, the budget object is valid.</returns>
-    public List<string> ClientValidate(GetClientInfo budget);
+    public List<string> ClientValidate(GetClientInfo client);
 
     /// <summary>
     /// Reads clients from a CSV file, validates them, and returns a list of valid clients.
     /// Any errors encountered during validation are added to the provided errors list.
     /// </summary>
-    /// <param name="path">The CSV file containing the clients to be read and validated.</param>
+    /// <param name="path">The CSV file path containing the clients to be read and validated.</param>
     /// <param name="csvConfig">Configuration for reading the CSV file.</param>
     /// <param name="errors">A list to which any validation errors will be added.</param>
     /// <returns>A list of valid clients read from the CSV file.</returns>

@@ -1,18 +1,12 @@
 ﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using Modules.User.Application.shared;
-using Modules.User.Domain;
-using Modules.User.Infrastructure.Data;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Modules.User.Application.ImportingClients;
 public class GetClientInfoValidator : AbstractValidator<GetClientInfo>
 {
-
     public GetClientInfoValidator()
     {
-
         this.RuleFor(client => client.Name)
             .NotEmpty()
             .WithMessage("Client name is missing.")

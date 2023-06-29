@@ -5,10 +5,8 @@ using Modules.Csv.Infrastructure;
 using Modules.User.Application.ImportingClients;
 using Modules.User.Domain;
 using Modules.User.Infrastructure.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Modules.User.Application.shared.services;
@@ -22,11 +20,7 @@ public class ClientDataService : IClientDataService
         this.clientDbContext = clientDbContext;
         this.csvService = csvService;
     }
-    /// <summary>
-    /// Validates the properties of a client object.
-    /// </summary>
-    /// <param name="client">The client object to validate.</param>
-    /// <returns>A list of error messages. If the list is empty, the client object is valid.</returns>
+
     public List<string> ClientValidate(GetClientInfo client)
     {
         var validator = new GetClientInfoValidator();
@@ -39,13 +33,6 @@ public class ClientDataService : IClientDataService
 
     }
 
-    /// <summary>
-	/// Creates a new client based on the provided client information.
-	/// If a client with the same name already exists in the database, a random number is appended to the name.
-	/// </summary>
-	/// <param name="client">The client information used to create the new budget.</param>
-	/// <param name="clientsNames">The existing client's names used for checking whether the new client's name already exists in the database.</param>
-	/// <returns>Creates a new budget.</returns>
     public GetClientInfo? Create(GetClientInfo client)
     {
         var clientInfo = new GetClientInfo

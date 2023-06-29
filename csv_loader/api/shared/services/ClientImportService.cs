@@ -1,16 +1,15 @@
 ﻿using CsvHelper.Configuration;
-using CsvHelper;
 using Modules.Csv.Infrastructure.Import;
 using Modules.User.Application.ImportingClients;
-using System;
+
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
+
 using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using Modules.User.Domain;
-using Modules.Csv.Abstractions;
+
 
 namespace Modules.User.Application.shared.services;
 
