@@ -46,16 +46,12 @@ public class ClientDataService : IClientDataService
 	/// <param name="client">The client information used to create the new budget.</param>
 	/// <param name="clientsNames">The existing client's names used for checking whether the new client's name already exists in the database.</param>
 	/// <returns>Creates a new budget.</returns>
-    public GetClientInfo? Create(GetClientInfo client, GetClientsNameInfo? clientsNames)
+    public GetClientInfo? Create(GetClientInfo client)
     {
-        bool isExistingClient = clientsNames!.ClientNames!.Contains(client.Name);
-        string clientName = isExistingClient ? client.Name + Guid.NewGuid() : client.Name;
-        clientsNames!.ClientNames.Add(clientName);
-
         var clientInfo = new GetClientInfo
         {
             Id = client.Id,
-            Name = clientName,
+            Name = client.Name,
             Surname = client.Surname,
             Email = client.Email,
             PhoneNumber = client.PhoneNumber,
@@ -69,8 +65,6 @@ public class ClientDataService : IClientDataService
         var validClients = new List<GetClientInfo>();
         var invalidClients = new List<GetClientInfo>();
 
-        List<string> clientNamesList = clientDbContext.Clients.Select(c => c.Name).ToList();
-        GetClientsNameInfo clientsNames = new GetClientsNameInfo { ClientNames = clientNamesList };
 
         var clientsFromFile = await this.csvService.GetRecordsFromCsv<GetClientInfo>(path, csvConfig);
 
@@ -92,7 +86,7 @@ public class ClientDataService : IClientDataService
                 continue;
             }
 
-            var updateClient = this.Create(client, clientsNames);
+            var updateClient = this.Create(client);
             validClients.Add(updateClient);
         }
 
@@ -106,13 +100,12 @@ public class ClientDataService : IClientDataService
 
         foreach (var client in updatedClientToImport)
         {
-            var clientId = int.Parse(client.Id);
             var clientName = client.Name;
             var clientSurname = client.Surname;
             var clientEmail = client.Email;
             var clientPhoneNumber = client.PhoneNumber;
 
-            var newClient = new Client(clientId, clientName, clientSurname, clientEmail, clientPhoneNumber);
+            var newClient = new Client(clientName, clientSurname, clientEmail, clientPhoneNumber);
 
             newClients.Add(newClient);
         }

@@ -16,4 +16,12 @@ public class Client
         Email = email;
         PhoneNumber = phoneNumber;
     }
+
+    public Client(string name, string surname, string email, string phoneNumber)
+    {
+        Name = name;
+        Surname = surname;
+        Email = email;
+        PhoneNumber = phoneNumber;
+    }
 }

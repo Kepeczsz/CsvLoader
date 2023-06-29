@@ -56,7 +56,7 @@ namespace Modules.User.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

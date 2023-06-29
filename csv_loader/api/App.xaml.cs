@@ -5,6 +5,7 @@ using Modules.Csv.Abstractions;
 using Modules.User.Api;
 using Modules.User.Application.Dependencies;
 using Modules.User.Application.shared.services;
+using Modules.User.Application.views;
 using Modules.User.Domain;
 using Modules.User.Infrastructure.Data;
 using System.Windows;
@@ -26,14 +27,16 @@ public partial class App : Application
     private void ConfigureServices(ServiceCollection services)
     {
         services.AddImportModule();
+        //zamienic na appsettings
         services.AddDbContext<ClientDbContext>(options => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database=Clients; Trusted_Connection=True;MultipleActiveResultSets=true")); ;
         services.AddScoped<ClientController>();
         services.AddSingleton<MainWindow>();
+        services.AddTransient<FileSelectionWindow>();
     }
     protected void OnStartup(object sender, StartupEventArgs e)
     {
         var mainWindow = serviceProvider.GetService<MainWindow>();
-        mainWindow.Show();
+        mainWindow.ShowDialog();
     }
 }
 

@@ -1,9 +1,15 @@
 ﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Modules.User.Application.shared;
+using Modules.User.Domain;
+using Modules.User.Infrastructure.Data;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Modules.User.Application.ImportingClients;
 public class GetClientInfoValidator : AbstractValidator<GetClientInfo>
 {
+
     public GetClientInfoValidator()
     {
 
@@ -22,7 +28,7 @@ public class GetClientInfoValidator : AbstractValidator<GetClientInfo>
         this.RuleFor(client => client.PhoneNumber)
             .NotEmpty()
             .WithMessage("Client Phone Number is missing")
-            .Length(1, 13)
+            .Length(1, 20)
             .WithMessage("Client phone number has to be one character or less than 13");
 
         this.RuleFor(client => client.Email)

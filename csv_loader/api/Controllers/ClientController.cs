@@ -1,4 +1,5 @@
 ﻿using CsvHelper.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Modules.Csv.Abstractions;
 using Modules.Csv.Infrastructure;
 using Modules.User.Application.shared;
@@ -38,28 +39,11 @@ public class ClientController
         foreach (var client in listOfClients.listOfClients)
         {
             clientDbContext.Clients.Add(client);
-        }
 
-        await clientDbContext.SaveChangesAsync();
+        }
+        clientDbContext.SaveChanges();
 
         return errorList.Any() ? errorList : new List<string>{ "There wasn't any errors" };
     }
 
-    public void saveUserTest()
-    {
-        Client client = new Client(12312, "michal", "szczepaniak", "miher13@wp.pl", "507404620");
-        this.clientDbContext.Clients.Add(client);
-        clientDbContext.SaveChanges();
-    }
-
-    public async void ImportClientTest(string pathToFile)
-    {
-        var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
-        {
-            HasHeaderRecord = false,
-            Delimiter = ",",
-        };
-        var clients = await this.csvService.GetRecordsFromCsv<GetClientInfo>(pathToFile, csvConfig);
-
-    }
 }

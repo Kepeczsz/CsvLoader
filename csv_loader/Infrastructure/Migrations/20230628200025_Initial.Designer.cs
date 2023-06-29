@@ -11,7 +11,7 @@ using Modules.User.Infrastructure.Data;
 namespace Modules.User.Infrastructure.Migrations
 {
     [DbContext(typeof(ClientDbContext))]
-    [Migration("20230628184650_Initial")]
+    [Migration("20230628200025_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -59,7 +59,7 @@ namespace Modules.User.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

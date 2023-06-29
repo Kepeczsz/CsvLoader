@@ -23,9 +23,8 @@ public interface IClientDataService
     /// If a client with the same name already exists in the database, a random number is appended to the name.
     /// </summary>
     /// <param name="client">The client information used to create the new client.</param>
-    /// <param name="clientsNames">The existing client's names used for checking whether the new client's name already exists in the database.</param>
     /// <returns>Creates a new budget.</returns>
-    public GetClientInfo? Create(GetClientInfo client, GetClientsNameInfo? clientsNames);
+    public GetClientInfo? Create(GetClientInfo client);
 
     /// <summary>
     /// Validates the properties of a client object.
