@@ -19,9 +19,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Modules.User.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules.Csv.Infrastructure\Modules.Csv.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules.User.Domain\Modules.User.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ProjectConfiguration\appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
