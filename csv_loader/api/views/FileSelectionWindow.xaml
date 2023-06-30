@@ -18,11 +18,11 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Edit Record" Command="{Binding OpenEditRecordView}" />
-            <Button Content="Select File" Click="SelectFile_Click" Grid.Column="1" />
+            <Button Content="Edit Record" Command="{Binding OpenEditRecordViewCommand}" />
+            <Button Content="Select File" Command="{Binding SelectFileCommand}" Grid.Column="1" />
         </Grid>
 
-        <ListBox Name="lbFiles" Grid.Row="1">
+        <ListBox ItemsSource="{Binding FileNames}" Grid.Row="1">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />

@@ -14,29 +14,17 @@ namespace Modules.User.Application.views;
 public partial class FileSelectionWindow : Window
 {
     public string SelectedFilePath { get; private set; }
-    IServiceProvider serviceProvider;
     ClientController clientController;
 
-    public FileSelectionWindow(ClientController clientController, IServiceProvider serviceProvider)
+    public FileSelectionWindow(ClientController clientController)
     {
-        this.serviceProvider = serviceProvider;
         this.clientController = clientController;
         InitializeComponent();
 
-        FileSelectionViewModel mainViewModel = new FileSelectionViewModel();
-        this.DataContext = mainViewModel;
+        FileSelectionViewModel fileSelectionViewModel = new FileSelectionViewModel();
+        this.DataContext = fileSelectionViewModel;
     }
 
-    private void SelectFile_Click(object sender, RoutedEventArgs e)
-    {
-        OpenFileDialog openFileDialog = new OpenFileDialog();
-        openFileDialog.Filter = "CSV Files (*.csv)|*.csv";
-        if (openFileDialog.ShowDialog() == true)
-        {
-            foreach (string filename in openFileDialog.FileNames)
-                lbFiles.Items.Add(filename);
-        }
-    }
 
     private async Task<ClientList> ImportClients_Click(object sender, RoutedEventArgs e, string selectedFilePath)
     {

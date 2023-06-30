@@ -11,17 +11,17 @@ public class MainViewModel
 {
     public MainViewModel()
     {
-        OpenLoadView = new RelayCommand(Load_FileSelectionWindow_Click, CanChangeView);
+        OpenLoadView = new RelayCommand(ChangeViewToFileSelection, CanExecute);
     }
     public ICommand OpenLoadView { get; set; }
 
-    private void Load_FileSelectionWindow_Click(object sender)
+    private void ChangeViewToFileSelection(object sender)
     {
         FileSelectionWindow fileSelectionWindow = App.serviceProvider.GetRequiredService<FileSelectionWindow>();
         fileSelectionWindow.Show();
     }
 
-    private bool CanChangeView(object sender)
+    private bool CanExecute(object sender)
     {
         return true;
     }
