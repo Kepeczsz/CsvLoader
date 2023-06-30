@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modules.User.Application.ViewModel
+namespace Modules.User.Application.ViewModel;
+
+internal class FileSelectionViewModel
 {
-    internal class FileSelectionViewModel
-    {
-    }
 }
