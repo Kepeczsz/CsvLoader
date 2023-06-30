@@ -22,7 +22,7 @@
             <Button Content="Select File" Command="{Binding SelectFileCommand}" Grid.Column="1" />
         </Grid>
 
-        <ListBox ItemsSource="{Binding FileNames}" Grid.Row="1">
+        <ListBox Name="lbFiles" ItemsSource="{Binding FileNames}" SelectedItem="{Binding SelectedFilePath}" Grid.Row="1">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />
@@ -30,7 +30,7 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
 
-        <ListView Name="importedClientsListView" Grid.Row="2" Grid.IsSharedSizeScope="True">
+        <ListView Name="importedClientsListView" ItemsSource="{Binding listOfClients}" Grid.Row="2" Grid.IsSharedSizeScope="True">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />

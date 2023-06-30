@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modules.User.Application.Controllers;
 using Modules.User.Application.Dependencies;
+using Modules.User.Application.ViewModel;
 using Modules.User.Application.views;
 using Modules.User.Infrastructure.Data;
 using System.IO;
@@ -37,6 +38,7 @@ public partial class App : Application
         services.AddDbContext<ClientDbContext>();
         services.AddScoped<ClientController>();
         services.AddSingleton<MainWindow>();
+
         services.AddTransient<FileSelectionWindow>();
         services.AddTransient<EditRecordWindow>();
 
