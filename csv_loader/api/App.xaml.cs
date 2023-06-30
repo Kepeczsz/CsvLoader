@@ -15,7 +15,7 @@ namespace api;
 /// </summary>
 public partial class App : Application
 {
-    private ServiceProvider serviceProvider;
+    public static ServiceProvider serviceProvider;
     public App()
     {
         ServiceCollection services = new ServiceCollection();
@@ -34,11 +34,13 @@ public partial class App : Application
         services.AddDbContext<ClientDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("AppDb")));
 
-        services.AddDbContext<ClientDbContext>(); ;
+        services.AddDbContext<ClientDbContext>();
         services.AddScoped<ClientController>();
         services.AddSingleton<MainWindow>();
         services.AddTransient<FileSelectionWindow>();
         services.AddTransient<EditRecordWindow>();
+
+
     }
     protected void OnStartup(object sender, StartupEventArgs e)
     {

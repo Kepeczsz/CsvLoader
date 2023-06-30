@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using api;
+using Microsoft.Extensions.DependencyInjection;
 using Modules.User.Application;
 using Modules.User.Application.Shared.Services;
 using Modules.User.Application.views;
@@ -14,16 +15,14 @@ namespace Modules.User.Application.views;
 /// </summary>
 public partial class MainWindow : Window
 {
-    IServiceProvider serviceProvider;
-    public MainWindow(IServiceProvider serviceProvider)
+    public MainWindow()
     {
-        this.serviceProvider = serviceProvider;
         InitializeComponent();
     }
 
     private void Load_FileSelectionWindow_Click(object sender, RoutedEventArgs e)
     {
-        FileSelectionWindow fileSelectionWindow = serviceProvider.GetRequiredService<FileSelectionWindow>();
+        FileSelectionWindow fileSelectionWindow = App.serviceProvider.GetService<FileSelectionWindow>();
         fileSelectionWindow.Show();
     }
 }
