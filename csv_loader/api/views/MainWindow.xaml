@@ -6,6 +6,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="LoadBtn" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Click="Load_FileSelectionWindow_Click">Load</Button>
+        <Button x:Name="LoadBtn" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Command="{Binding OpenLoadView}">Load</Button>
     </Grid>
 </Window>

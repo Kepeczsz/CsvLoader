@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Edit Record" Click="EditRecord_Click" />
+            <Button Content="Edit Record" Command="{Binding OpenEditRecordView}" />
             <Button Content="Select File" Click="SelectFile_Click" Grid.Column="1" />
         </Grid>
 

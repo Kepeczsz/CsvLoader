@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using Modules.User.Application.Controllers;
 using Modules.User.Application.ImportingClients;
+using Modules.User.Application.ViewModel;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,9 @@ public partial class FileSelectionWindow : Window
         this.serviceProvider = serviceProvider;
         this.clientController = clientController;
         InitializeComponent();
+
+        FileSelectionViewModel mainViewModel = new FileSelectionViewModel();
+        this.DataContext = mainViewModel;
     }
 
     private void SelectFile_Click(object sender, RoutedEventArgs e)
@@ -32,12 +36,6 @@ public partial class FileSelectionWindow : Window
             foreach (string filename in openFileDialog.FileNames)
                 lbFiles.Items.Add(filename);
         }
-    }
-
-    private void EditRecord_Click(object sender, RoutedEventArgs e)
-    {
-        EditRecordWindow editRecordWindow = serviceProvider.GetRequiredService<EditRecordWindow>();
-        editRecordWindow.Show();
     }
 
     private async Task<ClientList> ImportClients_Click(object sender, RoutedEventArgs e, string selectedFilePath)

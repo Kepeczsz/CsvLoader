@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Modules.User.Application;
 using Modules.User.Application.Shared.Services;
+using Modules.User.Application.ViewModel;
 using Modules.User.Application.views;
 using System;
 using System.ComponentModel;
@@ -18,11 +19,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        MainViewModel mainViewModel = new MainViewModel();
+        this.DataContext = mainViewModel;
     }
 
-    private void Load_FileSelectionWindow_Click(object sender, RoutedEventArgs e)
-    {
-        FileSelectionWindow fileSelectionWindow = App.serviceProvider.GetService<FileSelectionWindow>();
-        fileSelectionWindow.Show();
-    }
 }
